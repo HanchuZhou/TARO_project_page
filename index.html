@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="TARO: An Agile Tactile World Action Model for Contact-Rich Robot Control.">
+  <meta name="keywords" content="TARO, tactile world action model, visuotactile, robot learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TARO: An Agile Tactile World Action Model for Contact-Rich Robot Control</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" type="image/webp" href="./static/images/taro-icon-svg-download-png-2378925.webp">
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="title-brand"><img class="title-brand-icon"
+                   src="./static/images/taro-icon-svg-download-png-2378925.webp" alt="">TARO:</span>
+              An Agile Tactile World Action Model for Contact-Rich Robot Control
+            </h1>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://hanchuzhou.github.io/">Hanchu Zhou</a><sup>1,*</sup>,</span>
+              <span class="author-block">Brendan Lynch<sup>2</sup>,</span>
+              <span class="author-block">Raman Goyal<sup>2</sup>,</span>
+              <span class="author-block"><a href="https://gaodechen.github.io/">Dechen Gao</a><sup>1</sup>,</span>
+              <span class="author-block">Begum Kasap<sup>2</sup>,</span>
+              <span class="author-block">Boqi Zhao<sup>1</sup>,</span>
+              <span class="author-block"><a href="https://faculty.engineering.ucdavis.edu/jzhang/">Junshan Zhang</a><sup>1</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors affiliation-block">
+              <span class="author-block"><sup>1</sup>University of California, Davis</span><br>
+              <span class="author-block"><sup>2</sup>Analog Device</span><br>
+              <span class="author-block internship-note"><sup>*</sup> Work done during an internship at Analog Device.</span>
+            </div>
+
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="#" class="button is-normal is-rounded is-dark" aria-label="Paper link placeholder">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/ucd-dare/VITA" class="button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact-rich-section">
+    <div class="container is-widescreen">
+      <h2 class="title is-3 has-text-centered">Contact-Rich Manipulation</h2>
+      <div class="task-video-grid">
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/gear_assembly_middle_tactile.mp4" type="video/mp4">
+          </video>
+          <figcaption>Gear Assembly</figcaption>
+        </figure>
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/power_plug_insertion_middle_tactile.mp4" type="video/mp4">
+          </video>
+          <figcaption>Power Plug Insertion</figcaption>
+        </figure>
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/internet_cable_insertion_middle_tactile.mp4" type="video/mp4">
+          </video>
+          <figcaption>Internet Cable Insertion</figcaption>
+        </figure>
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/peg_insertion_middle_tactile.mp4" type="video/mp4">
+          </video>
+          <figcaption>Peg Insertion</figcaption>
+        </figure>
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/internet_cable_unplug_middle_tactile.mp4" type="video/mp4">
+          </video>
+          <figcaption>Internet Cable Unplug</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              World Action Models (WAMs) improve robot control by jointly predicting actions and future
+              observations, but contact-rich manipulation requires physical information that vision alone
+              cannot reliably capture. Recent tactile WAMs often rely on large pretrained generative
+              backbones, which limit their inference efficiency and flexible deployment. To address this
+              limitation, we present <span class="taro-name">TARO</span>, an agile
+              <u>ta</u>ctile Wo<u>r</u>ld Action M<u>o</u>del for contact-rich robot control.
+              <span class="taro-name">TARO</span> encodes visual and tactile observations into a shared latent
+              that serves as the source of a compact conditioning-free flow-matching process, which jointly
+              generates latent representations of an action chunk and future visual and tactile observations.
+              A key observation is that vision and tactile signals evolve at inherently different timescales:
+              adjacent visual frames are often highly similar, whereas tactile
+              signals can change abruptly upon contact. We therefore introduce multi-horizon multimodal
+              prediction in <span class="taro-name">TARO</span>, which provides supervision for visual latent
+              at a larger temporal offset while predicting the adjacent tactile latent to preserve fine-grained
+              contact dynamics.
+              Across nine simulated and five real-world contact-rich manipulation tasks,
+              <span class="taro-name">TARO</span> demonstrates strong and robust control performance, achieving
+              a 6.8% relative improvement in simulation success rate over the strongest baseline while
+              supporting a control frequency of 96.6&nbsp;Hz. These results demonstrate that multimodal WAM
+              can be achieved with an agile architecture suitable for precise and high-frequency robot control.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-fluid framework-shell">
+      <h2 class="title is-3 has-text-centered">Method</h2>
+      <figure class="method-figure">
+        <div class="framework-container">
+          <object class="framework-diagram" data="./static/images/taro_framework.svg" type="image/svg+xml"
+                  aria-label="Animated diagram of the TARO framework">
+            TARO framework: visual and tactile observations are encoded and fused into a shared
+            source latent, transformed through flow matching, and decoded or supervised as action,
+            future visual, and future tactile targets.
+          </object>
+        </div>
+        <img class="tactile-framework-diagram" src="./static/images/tac_framework.png"
+             alt="Tactile framework architecture">
+        <figcaption>
+          TARO jointly generates actions and multimodal future representations through a compact flow-matching backbone.
+        </figcaption>
+      </figure>
+      <figure class="method-figure multi-horizon-figure">
+        <img src="./static/images/multi-horizon.png"
+             alt="Multi-horizon multimodal prediction for visual and tactile observations">
+        <figcaption>
+          We introduce multi-horizon multimodal prediction for future latent. This decoupled supervision on different horizons better matches the temporal characteristics
+          of each modality and supports precise contact-rich manipulation.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container is-widescreen">
+      <h2 class="title is-3 has-text-centered">Corrective Behaviors</h2>
+      <div class="content has-text-justified corrective-copy">
+        <p>
+          TARO effectively learns and executes corrective behaviors in real-world experiments.
+          When the initial attempt fails to align the object with the target position, TARO can
+          still recover under an obstructed visual view by gently maintaining contact with the
+          surrounding surface and using tactile feedback to search for the correct insertion
+          position. This recovery capability substantially improves the success rate over
+          baselines, which often fail to correct the misalignment.
+        </p>
+      </div>
+      <div class="corrective-video-grid">
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/gear_box_recovery_corrective.mp4" type="video/mp4">
+          </video>
+          <figcaption>Gear Assembly</figcaption>
+        </figure>
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/internet_cable_insertion_corrective.mp4" type="video/mp4">
+          </video>
+          <figcaption>Internet Cable Insertion</figcaption>
+        </figure>
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/peg_insertion_corrective.mp4" type="video/mp4">
+          </video>
+          <figcaption>Peg Insertion</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-widescreen">
+      <h2 class="title is-3 has-text-centered">Experimental Results</h2>
+      <div class="content results-copy">
+        <p>
+          We evaluate <span class="taro-name">TARO</span> on nine simulated and five real-world contact-rich
+          manipulation tasks. Across these tasks, we investigate its performance and computational efficiency.
+        </p>
+      </div>
+      <figure class="results-figure">
+        <img src="./static/images/sim sc.png"
+             alt="Simulation success-rate comparison">
+      </figure>
+      <figure class="results-figure small-results-figure">
+        <img src="./static/images/real sc.png"
+             alt="Real-world success-rate comparison">
+      </figure>
+      <figure class="results-figure small-results-figure">
+        <img src="./static/images/efficiency.png"
+             alt="Inference efficiency comparison">
+      </figure>
+      <div class="content ablation-copy">
+        <p>
+          <strong>Ablation studies of TARO.</strong>
+          (a) Joint action&ndash;future modeling improves performance beyond the gain from increased latent capacity.
+          (b) Jointly modeling both future visual and tactile observations provides the strongest performance under multimodal input.
+          (c) Multi-horizon multimodal prediction better matches the different temporal characteristics of vision and tactile signals.
+          (d) We vary the visual and tactile prediction loss weights to explore their respective influence on policy performance.
+        </p>
+      </div>
+      <figure class="results-figure ablation-results-figure">
+        <img src="./static/images/ablation_combined.png"
+             alt="Combined ablation study results">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container is-widescreen">
+      <h2 class="title is-3 has-text-centered">Failure of Baselines</h2>
+      <div class="content failure-copy">
+        <p>
+          Baseline methods lack either tactile feedback or dynamic modeling, resulting in imprecise
+          motions and an inability to recover once the object becomes misaligned.
+        </p>
+      </div>
+      <div class="failure-video-grid">
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/gear_assembly_failure.mp4" type="video/mp4">
+          </video>
+          <figcaption>Gear Assembly Failure</figcaption>
+        </figure>
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/internet_cable_insertion_failure.mp4" type="video/mp4">
+          </video>
+          <figcaption>Internet Cable Insertion Failure</figcaption>
+        </figure>
+        <figure class="task-video-card">
+          <video controls autoplay muted loop playsinline preload="metadata">
+            <source src="./static/images/internet_cable_unplug_failure.mp4" type="video/mp4">
+          </video>
+          <figcaption>Internet Cable Unplug Failure</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{taro,
+  title  = {TARO: An Agile Tactile World Action Model for Contact-Rich Robot Control},
+  author = {Zhou, Hanchu and Lynch, Brendan and Goyal, Raman and Gao, Dechen and Kasap, Begum and Zhao, Boqi and Zhang, Junshan},
+  year   = {20XX}
+}</code></pre>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              Website template adapted from
+              <a href="https://nerfies.github.io">Nerfies</a> and licensed under
+              <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

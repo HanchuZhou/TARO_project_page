@@ -1,0 +1,270 @@
+:root {
+  --accent: #6b4eff;
+  --accent-soft: #eeeaff;
+  --ink: #202124;
+  --muted: #667085;
+}
+
+body {
+  color: var(--ink);
+  font-family: "Noto Sans", sans-serif;
+}
+
+.publication-title,
+.publication-authors {
+  font-family: "Google Sans", sans-serif;
+}
+
+.publication-title {
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.title-brand {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.title-brand-icon {
+  height: 0.82em;
+  margin-right: 0.18em;
+  object-fit: contain;
+  vertical-align: -0.08em;
+  width: 0.82em;
+}
+
+.author-block {
+  display: inline-block;
+  margin: 0 0.15rem;
+}
+
+.affiliation-block {
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+.internship-note {
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+
+.publication-links {
+  margin-top: 1.5rem;
+}
+
+.link-block a {
+  margin: 0.25rem;
+}
+
+.framework-container {
+  background: #fafbfe;
+  border: 1px solid #e4e7ee;
+  border-radius: 18px;
+  box-shadow: 0 14px 40px rgb(38 50 74 / 10%);
+  overflow-x: auto;
+  padding: 0.5rem;
+}
+
+.framework-shell {
+  max-width: 1500px;
+}
+
+.framework-diagram {
+  display: block;
+  width: 100%;
+}
+
+.taro-name {
+  font-variant: small-caps;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.section-soft {
+  background: #f7f7fa;
+}
+
+.section-copy {
+  margin: 1.5rem auto 0;
+  max-width: 48rem;
+}
+
+.contact-rich-section {
+  padding-top: 1rem;
+}
+
+.task-video-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.task-video-grid .task-video-card:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 0.875rem);
+}
+
+.task-video-card {
+  margin: 0;
+  min-width: 0;
+}
+
+.task-video-card video {
+  background: #000;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgb(38 50 74 / 12%);
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.task-video-card figcaption,
+.method-figure figcaption {
+  color: var(--ink);
+  font-family: "Google Sans", sans-serif;
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-top: 0.65rem;
+  text-align: center;
+}
+
+.method-figure {
+  margin: 0;
+}
+
+.tactile-framework-diagram {
+  display: block;
+  height: auto;
+  margin: 1.75rem auto 0;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.multi-horizon-figure {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.multi-horizon-figure img {
+  height: auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.multi-horizon-figure figcaption {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48rem;
+}
+
+.corrective-video-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.corrective-copy {
+  margin: 0 auto 2rem;
+  max-width: 60rem;
+}
+
+.corrective-video-grid .task-video-card:last-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: calc(50% - 0.875rem);
+}
+
+.failure-video-grid {
+  display: grid;
+  gap: 1.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.failure-copy {
+  margin: 0 auto 2rem;
+  max-width: 60rem;
+}
+
+.results-figure {
+  margin: 0 auto 2.5rem;
+  text-align: center;
+}
+
+.results-copy {
+  margin: 0 auto 2rem;
+  max-width: 60rem;
+}
+
+.results-figure img {
+  height: auto;
+  max-width: 100%;
+}
+
+.small-results-figure {
+  max-width: 620px;
+}
+
+.ablation-copy {
+  margin: 0 auto 1.25rem;
+  max-width: 900px;
+}
+
+.ablation-results-figure {
+  max-width: 900px;
+}
+
+.media-placeholder {
+  align-items: center;
+  aspect-ratio: 4 / 3;
+  background:
+    linear-gradient(135deg, rgb(107 78 255 / 10%), rgb(48 193 170 / 12%)),
+    repeating-linear-gradient(135deg, transparent, transparent 12px, rgb(255 255 255 / 45%) 12px, rgb(255 255 255 / 45%) 24px);
+  border: 2px dashed rgb(107 78 255 / 35%);
+  border-radius: 14px;
+  color: var(--accent);
+  display: flex;
+  font-family: "Google Sans", sans-serif;
+  font-weight: 600;
+  justify-content: center;
+  min-height: 12rem;
+}
+
+.media-placeholder-wide {
+  aspect-ratio: 16 / 9;
+}
+
+pre {
+  border-radius: 10px;
+}
+
+.footer {
+  padding: 3rem 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .publication-title {
+    font-size: 2.5rem !important;
+  }
+
+  .framework-container {
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+  }
+
+  .framework-diagram {
+    min-width: 980px;
+  }
+
+  .task-video-grid,
+  .corrective-video-grid,
+  .failure-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .task-video-grid .task-video-card:last-child,
+  .corrective-video-grid .task-video-card:last-child {
+    grid-column: auto;
+    width: 100%;
+  }
+}
