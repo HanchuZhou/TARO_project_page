@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1540 560" role="img" aria-labelledby="title description">
   <title id="title">Animated TARO framework</title>
-  <desc id="description">Visual observations, tactile observations, and robot state are encoded or fused into a shared source. Condition-free flow matching directly transports the source into a joint latent used for action, future visual, and future tactile prediction.</desc>
+  <desc id="description">Visual observations, tactile observations, and robot state are encoded or fused into a shared source. Conditioning-free flow matching directly transports the source into a joint latent used for action, future visual, and future tactile prediction.</desc>
   <defs>
     <linearGradient id="visual" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#7258ff"/><stop offset="1" stop-color="#a99cff"/>
@@ -126,9 +126,9 @@
     </g>
     <text x="582" y="408" class="label compact-label">Shared source</text>
 
-    <!-- Taller, condition-free direct transport; intentionally no outer connector arrows. -->
+    <!-- Taller, conditioning-free direct transport; intentionally no outer connector arrows. -->
     <rect x="665" y="85" width="320" height="390" rx="30" fill="url(#flow)"/>
-    <text x="825" y="141" class="label light">Condition-free</text>
+    <text x="825" y="141" class="label light">Conditioning-free</text>
     <text x="825" y="172" class="label light">flow matching</text>
     <g>
       <use href="#f1" class="flow-line"/><use href="#f2" class="flow-line"/>
