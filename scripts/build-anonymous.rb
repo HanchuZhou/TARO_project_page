@@ -36,16 +36,16 @@ replace_once!(
 
 replace_once!(
   html,
-  /              <span class="link-block">\n                <a href="https:\/\/github\.com\/[^"]+".*?              <\/span>\n/m,
+  /            <div class="publication-links">.*?            <\/div>\n/m,
   "",
-  "identifying code link"
+  "publication links block"
 )
 
 replace_once!(
   html,
-  /  author = \{[^\n]+\},/,
-  "  author = {Anonymous Authors},",
-  "BibTeX author field"
+  /  <section class="section" id="BibTeX">.*?  <\/section>\n/m,
+  "",
+  "BibTeX section"
 )
 
 html.gsub!("./static/", "../static/")
