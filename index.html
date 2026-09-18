@@ -41,7 +41,8 @@
 
             <div class="publication-links">
               <span class="link-block">
-                <a href="#" class="button is-normal is-rounded is-dark" aria-label="Paper link placeholder">
+                <a href="https://arxiv.org/pdf/2609.20761" class="button is-normal is-rounded is-dark"
+                   aria-label="Paper PDF on arXiv">
                   <span class="icon"><i class="fas fa-file-pdf"></i></span>
                   <span>Paper</span>
                 </a>
@@ -104,25 +105,35 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified">
             <p>
-              World Action Models (WAMs) improve robot control by jointly predicting actions and future
-              observations, but contact-rich manipulation requires physical information that vision alone
-              cannot reliably capture. Recent tactile WAMs often rely on large pretrained generative
-              backbones, which limit their inference efficiency and flexible deployment. To address this
-              limitation, we present Agile-WAM, an agile tactile World Action Model for contact-rich robot
-              control. Agile-WAM encodes visual and tactile observations into a shared latent that serves as
-              the source of a direct vision-tactile-to-action flow-matching process, which can jointly generate
-              latent representations of an action chunk and future visual/tactile latents.
-              A key observation is that vision and tactile signals evolve at inherently different timescales:
-              adjacent visual frames are often highly similar, whereas tactile signals can change abruptly upon
-              contact. We therefore introduce multi-horizon multimodal prediction in Agile-WAM, which provides
-              supervision for visual latent at a larger temporal offset while predicting the adjacent tactile
-              latent to preserve fine-grained contact dynamics. Across nine simulated and five real-world
-              contact-rich manipulation tasks, Agile-WAM demonstrates strong and robust performance,
-              outperforming the strongest baseline in success rate while maintaining low inference latency.
-              In particular, in five real-world experiments, Agile-WAM yields a relative gain of
-              <strong>29.4%</strong> in overall success rates while achieving inference latency of
-              <strong>11.9 ms</strong>. These results demonstrate that multimodal WAM can be achieved with an
-              agile architecture suitable for precise and high-frequency robot control.
+              World Action Models (WAMs) advance beyond
+              conventional visuomotor policies by jointly predicting future
+              world states and robot actions, enabling the policy to learn phys-
+              ical dynamics that support effective control. However, recent
+              tactile WAMs often rely on large-scale pretrained generative
+              backbones to capture contact-rich physical dynamics, which
+              limit their inference efficiency and flexible deployment. In this
+              paper, we present Agile-WAM, an agile tactile World Action
+              Model for contact-rich robot control. Agile-WAM encodes visual
+              and tactile observations into a shared latent that serves as the
+              source of a direct vision-tactile-to-action flow-matching process,
+              which can jointly generate latent representations of action
+              chunks and future visual/tactile latents. A key observation is
+              that vision and tactile signals evolve at inherently different
+              timescales: adjacent visual frames are often highly similar,
+              whereas tactile signals can change abruptly upon contact.
+              We therefore introduce multi-horizon multimodal prediction
+              in Agile-WAM, which provides supervision for visual latent
+              at a larger temporal offset while predicting the tactile latent
+              in the next frame to capture fine-grained contact dynamics.
+              Across nine simulated and five real-world contact-rich ma-
+              nipulation tasks, Agile-WAM demonstrates strong and robust
+              performance, outperforming the strongest baseline in success
+              rate while maintaining low inference latency. In particular, in
+              five real-world experiments, Agile-WAM yields a relative gain of
+              29.4% in overall success rates while achieving inference latency
+              of 11.9 ms. These results demonstrate that multimodal WAM
+              can be achieved with an agile architecture suitable for precise
+              and high-frequency robot control.
             </p>
           </div>
         </div>
