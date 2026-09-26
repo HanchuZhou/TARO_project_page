@@ -110,6 +110,10 @@ body {
   min-width: 0;
 }
 
+.simulation-video-card {
+  margin-top: 2rem;
+}
+
 .task-video-card video {
   background: #000;
   border-radius: 12px;
